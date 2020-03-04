@@ -55,7 +55,6 @@ def apply_coupons(cart, coupons)
   while cc < coupons.size do
     matchhash = find_item_by_name_in_collection(coupons[cc][:item], cart)
     if matchhash[:count] >= coupons[cc][:num]
-      binding.pry
       remainder = matchhash[:count] % coupons[cc][:num]
       new_hash = {
         item: "#{matchhash[:item]} W/COUPON",
